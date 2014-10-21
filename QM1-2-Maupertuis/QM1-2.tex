@@ -1,0 +1,48 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{CJK}
+\begin{document}
+    \begin{CJK*}{UTF8}{kai}
+    QM1-2 \quad 利用Maupertuis原理证明Newton第二定律.\\[0.5cm]
+    证明：\\[3pt]
+    \end{CJK*}
+    \begin{CJK*}{UTF8}{song}
+    \indent 已知Maupertuis原理
+    \begin{equation}
+    \label{f}
+    \delta \int \sqrt{E - U}\mathrm{ds} 
+    = \int ((\sqrt{E-U})\delta\mathrm{ds} - \frac{\delta U}{2\sqrt{E-U}}\mathrm{ds})
+    = 0
+    \end{equation}
+    \indent 由
+    \begin{eqnarray}
+    \delta \mathrm{ds} = \sum\frac{\mathrm{d x_{i}}}{\mathrm{ds}}\delta \mathrm{d x_{i}} \\
+     \delta U = \sum \frac{\partial U}{\partial x_{i}}\delta x_{i}
+    \end{eqnarray}
+    \indent 得
+    \begin{eqnarray}
+    \int  (\sqrt{E-U}\cdot\sum\frac{\mathrm{d x_{i}}}{\mathrm{ds}} \mathrm{d} \delta x_{i}
+    - \frac{\delta U}{2\sqrt{E-U}}\delta x_{i})  =   0 \nonumber \\
+    \Rightarrow \int \sum (\delta x_{i}\cdot \mathrm{d (\sqrt{E-U}\frac{d x_{i}}{ds})}   + 
+    \frac{1}{2\sqrt{E-U}} \cdot \frac{\partial U}{\partial x_{i}} \mathrm{ds} \cdot\delta x_{i}) =  0
+    \end{eqnarray}
+    \indent 由$\delta x_{i}$的任意性可得
+    \begin{equation}
+    \frac{d}{ds}(\sqrt{E-U}\cdot \frac{d x_{i}}{ds}) 
+    = - \frac{1}{2\sqrt{E-U}}\cdot \frac{\partial U}{\partial x_{i}}
+    \end{equation}
+    \indent 又由动力学基础得
+    \begin{equation}
+    v = \sqrt{\frac{2(E-U)}{m}} \quad,
+    \quad \mathrm{d t} = \frac{ds}{v} = \sqrt{\frac{m}{2(E-U)}} \mathrm{d s}
+    \end{equation}
+    \indent 将(5)(6)代入(4)可得
+    $$ m \frac{d^{2} x_{i}}{d t^{2}} = - \frac{\partial U}{\partial x_{i}} $$
+    \indent 即为Newton第二定律.\\
+    \end{CJK*}
+    \begin{CJK*}{UTF8}{kai}
+        \begin{flushright}
+            \small PB12203077\quad吴奕涛\\
+            \footnotesize \today
+        \end{flushright}
+    \end{CJK*}
+\end{document} 

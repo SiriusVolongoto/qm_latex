@@ -1,0 +1,243 @@
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{CJK}
+\usepackage{graphicx}
+\usepackage[top=30mm,bottom=20mm,left=25mm,right=25mm]{geometry}
+
+\begin{document}
+    \begin{center}
+        \textsf{\LARGE{Quantum Mechanics (A) - Assignment 6}}\\[20pt]
+    \end{center}
+
+    \begin{CJK*}{UTF8}{kai}
+        \begin{flushright}
+            \small PB12203077\quad吴奕涛\\
+            \small Last Modified:\today
+        \end{flushright}
+    \end{CJK*}
+
+    \noindent\Large{\emph{October 16 , 2014}}\\[15pt]
+    \begin{CJK*}{UTF8}{song}
+    \noindent 2.7 \textbf{证明：}\\[12pt]
+    {
+    根据教材p246，附录A3,式(13)：
+    $$H_{n + 1}(z) - 2 z H_{n}(z) + 2 n H_{n - 1} = 0$$
+    及教材p47，2.4（14）：
+    $$\psi_{n}(x) = \sqrt{\frac{\alpha}{2^{n}\cdot n!\sqrt{\pi}}}e^{-\alpha^{2}x^{2} / 2}H_{n}(\alpha x)$$
+    注：为简便起见，本题以下证明均不写出$\displaystyle \pi^{-\frac{1}{4}}e^{-\alpha^{2}x^{2} / 2}$.\\
+    (a)
+    \begin{eqnarray}
+        \emph{Left}  & = & x\psi_{n}(x)=\sqrt{\frac{\alpha}{2^{n}\cdot n!}}x H_{n}(\alpha x)\nonumber\\
+        \emph{Right} & = & \frac{1}{\alpha}[\sqrt{\frac{n}{2}}\psi_{n-1}(x) + \sqrt{\frac{n + 1}{2}}\psi_{n+1}(x)]\nonumber\\
+          & = & \frac{1}{\alpha}[\sqrt{\frac{n}{2}}\sqrt{\frac{\alpha}{2^{n-1}(n-1)!}}H_{n-1}(\alpha x)
+            + \sqrt{\frac{n+1}{2}}\sqrt{\frac{\alpha}{2^{n+1}(n+1)!}}H_{n-1}(\alpha x)]\nonumber\\
+          & = & \frac{1}{a}\sqrt{\frac{\alpha}{2^{n+2} n!}}[2 n H_{n-1}(\alpha x) + H_{n+1}(\alpha x)] \nonumber\\
+          & = & \frac{1}{a}\sqrt{\frac{\alpha}{2^{n+2} n!}}\cdot 2\alpha x H_{n}(\alpha x)\nonumber\\
+          & = & \sqrt{\frac{\alpha}{2^{n}\cdot n!}}x H_{n}(\alpha x)\nonumber
+    \end{eqnarray}
+    由此可得，Left=Right，原式成立。\\[8pt]
+    （b）\\
+    1.由Hermit多项式递推公式容易得到：\\
+    $$H_{n-2}(\alpha x) = \frac{1}{2(n-1)}[2\alpha x H_{n-1}(\alpha x) - H_{n}(\alpha x)]$$
+    $$H_{n+2}(\alpha x) = 2\alpha x H_{n+1}(\alpha x) - 2(n+1)H_{n}(\alpha x)$$
+    代入原式
+    \begin{eqnarray}
+        \emph{Left}    & = & x^{2}\psi_{n}(x)=\sqrt{\frac{\alpha}{2^{n}\cdot n!}}x^{2} H_{n}(\alpha x)\nonumber\\
+        \emph{Right}   & = & \frac{1}{2\alpha^{2}}[\sqrt{n(n-1)}\psi_{n-1}(x)+(2 n + 1)\psi_{n}(x) + \sqrt{(n+1)(n+2)}\psi_{n+2}(x)]\nonumber\\
+            & = & \frac{1}{2\alpha^{2}}[\sqrt{n(n-1)}\sqrt{\frac{\alpha}{2^{n-2}(n-2)!}}H_{n-2}(\alpha x)
+                +(2 n + 1)\sqrt{\frac{\alpha}{2^{n}\cdot n!}}H_{n}(\alpha x) \nonumber\\
+            &   & + \sqrt{(n+1)(n+2)}\sqrt{\frac{\alpha}{2^{n+2}(n+2)!}}H_{n+2}(\alpha x)]\nonumber\\
+            & = & \frac{\sqrt{\alpha}}{2\alpha^{2}}[
+                \frac{\alpha x}{n-1}\sqrt{\frac{n(n-1)}{2^{n-2}(n-2)!}}H_{n-1}(\alpha x)
+                + \frac{\alpha x}{\sqrt{2^{n}\cdot n!}}H_{n+1}(\alpha x)\nonumber\\
+            &   & +(\frac{2n+1}{\sqrt{2^{n}\cdot n!}} - \frac{1}{2(n-1)}\sqrt{\frac{n(n-1)}{2^{n-2}(n-2)!}}
+                - \frac{n+1}{\sqrt{2^{n}\cdot n!}})H_{n}(\alpha x)]\nonumber\\
+            & = & \frac{1}{2\alpha^{2}}\sqrt{\frac{\alpha}{2^{n}\cdot n!}} \mbox{$\left[\right.$}
+                \alpha x (2 n H_{n-1}(\alpha x) + H_{n+1}(\alpha x))\nonumber\\
+            &   & \mbox{$+(2n+1-n-(n+1))H_{n}(\alpha x)\left.\right]$}\nonumber\\
+            & = & \frac{1}{2\alpha^{2}}\sqrt{\frac{\alpha}{2^{n}\cdot n!}}\cdot\alpha x\cdot \alpha x H_{n}(\alpha x)\nonumber\\
+            & = & \sqrt{\frac{\alpha}{2^{n}\cdot n!}}x^{2} H_{n}(\alpha x)\nonumber
+    \end{eqnarray}
+    由此可得，Left=Right，原式成立。\\[8pt]
+    2.使用(a)中结果：
+    \begin{eqnarray}
+        \emph{Left}    & = & x^{2}\psi_{n}(x)
+                    = x\cdot \frac{1}{\alpha}[\sqrt{\frac{n}{2}}\psi_{n-1}(x) + \sqrt{\frac{n + 1}{2}}\psi_{n+1}(x)]\nonumber\\
+                & = & \frac{1}{\alpha}\{\sqrt{\frac{n}{2}}\cdot
+                    \frac{1}{\alpha}[\sqrt{\frac{n-1}{2}}\psi_{n-2}(x) + \sqrt{\frac{n}{2}}\psi_{n}(x)]\nonumber\\
+                &   & + \sqrt{\frac{n + 1}{2}}\cdot\frac{1}{\alpha}
+                    [\sqrt{\frac{n+1}{2}}\psi_{n}(x) + \sqrt{\frac{n + 2}{2}}\psi_{n+2}(x)]\}\nonumber\\
+                & = & \frac{1}{2\alpha^{2}}[\sqrt{n(n-1)}\psi_{n-1}(x)+(2 n + 1)\psi_{n}(x)
+                    + \sqrt{(n+1)(n+2)}\psi_{n+2}(x)]\nonumber\\[8pt]
+                & = & \emph{Right}\nonumber
+    \end{eqnarray}
+    综上所述，原式得证。\\[8pt]
+    (c)由平均值计算公式有:
+    \begin{eqnarray}
+        \overline{x}    & = & \int^{\infty}_{-\infty}\psi_{n}^{*}(x) x \psi_{n}(x)\mathrm{d x}\nonumber\\
+                    & = & \int^{\infty}_{-\infty}\psi_{n}^{*}(x) \frac{1}{\alpha}[\sqrt{\frac{n}{2}}\psi_{n-1}(x)
+                        + \sqrt{\frac{n + 1}{2}}\psi_{n+1}(x)]\mathrm{d x}\nonumber\\
+                    & = & 0 \quad , \quad(\psi_{m},\psi_{n})=\delta_{mn}\nonumber
+    \end{eqnarray}
+    \begin{eqnarray}
+        \overline{V}    & = & \int^{\infty}_{-\infty}\psi_{n}^{*}(x) \frac{1}{2} K x^{2}
+                            \psi_{n}(x)\mathrm{d x}\nonumber\\
+                    & = & \frac{1}{2} K \int^{\infty}_{-\infty}\psi_{n}^{*}(x)\cdot
+                        \frac{1}{2\alpha^{2}}[\sqrt{n(n-1)}\psi_{n-1}(x) \nonumber\\
+                    &   & +(2 n + 1)\psi_{n}(x)
+                        + \sqrt{(n+1)(n+2)}\psi_{n+2}(x)]\mathrm{d x}\nonumber\\
+                    & = & \frac{(2n+1)K}{4\alpha^{2}} \quad , \quad(\psi_{m},\psi_{n})=\delta_{mn}\nonumber\\
+                    & = & \frac{(2n+1)m\omega^{2}}{4m\omega / \hbar} \quad,
+                        \quad \omega = \sqrt{K/m},\alpha=\sqrt{m\omega / \hbar}\nonumber\\
+                    & = & E_{n} / 2 \quad , \quad E_{n} = (n + \frac{1}{2})\hbar\omega \nonumber
+    \end{eqnarray}
+    }\\[20pt]
+    \noindent 2.8 \textbf{证明：}\\[12pt]
+    {
+    根据教材p246，附录A3，式（14）可知
+    $$H^{'}_{n}(z) = 2 n H_{n-1}(z) \quad\Rightarrow
+        \quad \frac{d}{dx}H_{n}(\alpha x) = 2 n\alpha H_{n-1}(\alpha x)$$
+    (a)由递推公式可得
+    $$H_{n+1}(\alpha x) = 2\alpha x H_{n}(\alpha x) - 2nH_{n-1}(\alpha x)$$
+    代入需要化简的表达式可得
+    \begin{eqnarray}
+        \emph{Left} & = & \frac{d}{dx}\psi_{n}(x)
+                        = \frac{d}{dx}[\sqrt{\frac{\alpha}{2^{n}\cdot n!\sqrt{\pi}}}
+                        e^{-\alpha^{2}x^{2}/2}H_{n}(\alpha x)]\nonumber\\
+                    & = &   \sqrt{\frac{\alpha}{2^{n}\cdot n!\sqrt{\pi}}}
+                        e^{-\alpha^{2}x^{2}/2}[-\alpha^{2}x H_{n}(x) + 2n\alpha H_{n-1}(\alpha x)]\nonumber\\
+    \end{eqnarray}
+    \begin{eqnarray}
+        \emph{Right}& = & {\alpha}[\sqrt{\frac{n}{2}}\psi_{n-1}(x)
+                        - \sqrt{\frac{n + 1}{2}}\psi_{n+1}(x)]\nonumber\\
+                    & = & \sqrt{\frac{\alpha}{2^{n}\cdot n!\sqrt{\pi}}}e^{-\alpha^{2}x^{2}/2}
+                        \cdot \frac{\alpha}{2}[2 n H_{n-1}(\alpha x) - H_{n+1}(\alpha x)]\nonumber\\
+                    & = & \sqrt{\frac{\alpha}{2^{n}\cdot n!\sqrt{\pi}}}e^{-\alpha^{2}x^{2}/2}\nonumber\\
+                    &   & \cdot \frac{\alpha}{2}[2 n H_{n-1}(\alpha x)
+                        - 2\alpha x H_{n}(\alpha x) + 2nH_{n-1}(\alpha x)]\nonumber\\
+                    & = &   \sqrt{\frac{\alpha}{2^{n}\cdot n!\sqrt{\pi}}}
+                        e^{-\alpha^{2}x^{2}/2}[-\alpha^{2}x H_{n}(x) + 2n\alpha H_{n-1}(\alpha x)]\nonumber
+    \end{eqnarray}
+    综上所述，Left=Right，原式得证。\\[12pt]
+    (b)引用(a)中结果
+    \begin{eqnarray}
+        \emph{Left} & = & \frac{d^{2}}{d x^{2}}\psi_{n}(x)
+                        = \frac{d}{d x}(\frac{d \psi_{n}}{d x})\nonumber\\
+                    & = & \frac{d}{d x}(\frac{1}{\alpha}[\sqrt{\frac{n}{2}}\psi_{n-1}(x)
+                        - \sqrt{\frac{n + 1}{2}}\psi_{n+1}(x)])\nonumber\\
+                    & = & {\alpha}[\sqrt{\frac{n}{2}}\frac{d\psi_{n-1}}{d x}
+                        - \sqrt{\frac{n + 1}{2}}\frac{d\psi_{n+1}}{d x}]\nonumber\\
+                    & = &{\alpha}[\sqrt{\frac{n}{2}}{\alpha}(\sqrt{\frac{n-1}{2}}\psi_{n-2}
+                        - \sqrt{\frac{n}{2}}\psi_{n})\nonumber\\
+                    &   & - \sqrt{\frac{n + 1}{2}}{\alpha}(\sqrt{\frac{n+1}{2}}\psi_{n}
+                        - \sqrt{\frac{n + 2}{2}}\psi_{n+2})]\nonumber\\
+                    & = & \frac{\alpha^{2}}{2}[\sqrt{n(n-1)}\psi_{n-1} - (2n+1)\psi_{n}
+                        + \sqrt{(n+1)(n+2)}\psi_{n+2}]\nonumber\\[8pt]
+                    & = & \emph{Right}\nonumber
+    \end{eqnarray}
+    综上所得，原式得证。\\[12pt]
+    (c)根据教材p13,力学量平均值的算符计算公式
+    \begin{eqnarray}
+        \bar{p} & = & \int_{-\infty}^{\infty}
+                        \psi_{n}^{*}(x)\hat{p}\,\psi_{n}(x)\mathrm{d x}\nonumber\\
+            & = & \int_{-\infty}^{\infty}\psi_{n}^{*}(x)
+                        (- i\hbar\frac{\mathrm{d}\psi_{n}}{\mathrm{d} x})\mathrm{d x}\nonumber\\
+            & = & - i\hbar\int_{-\infty}^{\infty}\psi_{n}^{*}(x)
+                        \cdot{\alpha}[\sqrt{\frac{n}{2}}\psi_{n-1}(x)
+                        - \sqrt{\frac{n + 1}{2}}\psi_{n+1}(x)]\mathrm{d x}\nonumber\\
+            & = & 0 \qquad,\qquad (\psi_{m},\psi_{n})=\delta_{m n}\nonumber\\
+        \bar{T}   & = & \int_{-\infty}^{\infty}
+                        \psi_{n}^{*}(x)\hat{T}\,\psi_{n}(x)\mathrm{d x}\nonumber\\
+            & = & \int_{-\infty}^{\infty}\psi_{n}^{*}(x)
+                        (- \frac{\hbar^{2}}{2 m}\frac{\mathrm{d^{2}}\psi_{n}}{\mathrm{d} x^{2}})\mathrm{d x}\nonumber\\
+            & = & - \frac{\hbar^{2}}{2 m}\int_{-\infty}^{\infty}\psi_{n}^{*}(x)
+                \cdot\frac{\alpha^{2}}{2}\mbox{$\left[\right.$}\sqrt{n(n-1)}\psi_{n-1} - (2n+1)\psi_{n}\nonumber\\
+            &   & \rightline{\mbox{$+ \sqrt{(n+1)(n+2)}\psi_{n+2}{\left.\right]}\mathrm{d x}$}}\nonumber\\
+            & = & \frac{(2 n + 1 )\hbar^{2}\alpha^{2}}{4m}
+                \qquad,\qquad (\psi_{m},\psi_{n})=\delta_{m n}\nonumber\\
+            & = & \frac{E_{n}}{2}\nonumber
+    \end{eqnarray}
+    }\\[20pt]
+    \noindent 2.9 \textbf{解：}\\[12pt]
+    {
+    根据2.7(c),2.8(c)中的计算结果：\\
+    $$\bar{x} = 0 \quad ,
+        \quad \bar{x^{2}} = 2\bar{V}/K = (n+\frac{1}{2})\frac{\hbar}{m\omega}$$
+    $$\bar{p} = 0 \quad ,
+        \quad \bar{p^{2}} = 2 m\bar{T} = m E_{n} = (n+\frac{1}{2}) m\hbar\omega$$
+    $$\Delta x = [\overline{(x-\bar{x})^{2}}]^{1/2}
+        = \sqrt{\bar{x^{2}}-(\bar{x})^{2}} = \sqrt{(n+\frac{1}{2})\frac{\hbar}{m\omega}}$$
+    $$\Delta p = [\overline{(p-\bar{p})^{2}}]^{1/2}
+        = \sqrt{\bar{p^{2}}-(\bar{p})^{2}} = \sqrt{(n+\frac{1}{2}) m\hbar\omega}$$
+    $$\Delta x \cdot \Delta p = (n + \frac{1}{2})\hbar$$.
+    }\\[20pt]
+    \noindent\Large{\emph{October 20 , 2014}}\\[15pt]
+    \noindent 3.3 \textbf{证明：}\\[12pt]
+    {
+    \indent 已知整函数$F(x,p)=\sum_{m,n=0}^{\infty}C_{mn}x^{m}p^{n}$，
+        以下为简便起见，将省略求和符号，也可认为仅取一项考虑。\\
+    (a)
+    \begin{equation}
+    \begin{split}
+    [p,F]   & = \hat{p}\hat{F} - \hat{F}\hat{p} \\
+            & = \hat{p}(C_{mn}x^{m}\hat{p^{n}}) - C_{mn}x^{m}\hat{p^{n}}\cdot\hat{p}\\
+            & = (-\mathrm{i}\hbar\frac{\partial}{\partial x})
+                [C_{mn}x^{m}\cdot (-\mathrm{i}\hbar)^{n}\frac{\partial^{n}}{\partial x^{n}}]
+                -C_{mn}x^{m}\cdot (-\mathrm{i}\hbar)^{n+1}\frac{\partial^{n+1}}{\partial x^{n+1}}\\
+            & = (-\mathrm{i}\hbar)^{n+1}C_{mn}[
+                \frac{\partial}{\partial x}(x^{m}\frac{\partial^{n}}{\partial x^{n}})
+                - \frac{\partial^{n+1}}{\partial x^{n+1}}]\\
+            & = (-\mathrm{i}\hbar)C_{mn}\frac{\partial x^{m}}{\partial x}
+                \cdot (-\mathrm{i}\hbar)^{n}\frac{\partial^{n}}{\partial x^{n}}\\
+            & = -\mathrm{i}\hbar\frac{\partial}{\partial x}(C_{mn}x^{m}p^{n})
+                \qquad,\quad \partial p / \partial x = 0\\
+            & = -\mathrm{i}\hbar\frac{\partial}{\partial x}F\\
+    \end{split}
+    \end{equation}
+    (b)
+    \begin{equation}
+    \begin{split}
+    [x,F]   & = x\hat{F} - \hat{F}x \\
+            & = x\cdot C_{mn}x^{m}\hat{p^{n}} - C_{mn}x^{m}\hat{p^{n}}\dot x \\
+            & = C_{mn}x^{m+1}(-\mathrm{i}\hbar)^{n}\frac{\partial^{n}}{\partial x^{n}}
+                - C_{mn}x^{m}(-\mathrm{i}\hbar)^{n}\frac{\partial^{n}}{\partial x^{n}}(x\cdot)\\
+            & = (-\mathrm{i}\hbar)^{n}C_{mn}x^{m}[x^{m}\frac{\partial^{n}}{\partial x^{n}}
+                - n\frac{\partial^{n-1}}{\partial x^{n-1}}
+                -x\frac{\partial^{n}}{\partial x^{n}}]\\
+            & = \mathrm{i}\hbar C_{mn}x^{m}\cdot n(-\mathrm{i}\hbar)^{n-1}
+                \frac{\partial^{n-1}}{\partial x^{n-1}}\\
+            & = \mathrm{i}\hbar C_{mn}x^{m}\cdot n \hat{p^{n-1}}\\
+            & = \mathrm{i}\hbar \frac{\partial}{\partial p}F.
+    \end{split}
+    \end{equation}
+    Q.E.D
+    }\\[20pt]
+    \noindent 3.7 \textbf{证明：}\\[12pt]
+    {
+    引理：
+    $$[\hat{\vec{A}}\times\hat{\vec{B}},\hat{C}] 
+        = \hat{\vec{A}}\times[\hat{\vec{B}},\hat{C}] + [\hat{\vec{A}},\hat{C}]\times\hat{\vec{B}}$$
+    利用引理及角动量算符定义$\hat{\vec{l}} = \vec{r}\times\hat{\vec{p}}$
+    \begin{equation}
+    \begin{split}
+    [\hat{\vec{l}},F]
+        & = [\vec{r}\times\hat{\vec{p}},F]\\
+        & = \vec{r}\times[\hat{\vec{p}},\hat{F}] + [\vec{r},\hat{F}]\times\hat{\vec{p}}\\
+        & = \vec{r}\times(\hat{\vec{p}}\hat{F} - \hat{F}\hat{\vec{p}})
+            +(\vec{r}\hat{F} - \hat{F}\vec{r})\times\hat{\vec{p}}\\
+        & = \vec{r}\times[-\mathrm{i}\hbar\frac{\partial F}{\partial \vec{r}}
+            -F\cdot(-\mathrm{i}\hbar\frac{\partial}{\partial \vec{r}})]
+            +[\mathrm{i}\hbar\frac{\partial F}{\partial \vec{p}}
+            -F\cdot\mathrm{i}\hbar\frac{\partial}{\partial \vec{p}}]\times\hat{\vec{p}}\\
+                        % \mbox{-应用3.3(b)}
+        & = -\mathrm{i}\hbar(\vec{r}\times\frac{\partial F}{\partial \vec{r}} 
+            - \frac{\partial F}{\partial \vec{p}}\times\vec{p})
+    \end{split}
+    \end{equation}
+    Q.E.D
+    }\\[20pt]
+    \end{CJK*}
+
+
+\end{document} 

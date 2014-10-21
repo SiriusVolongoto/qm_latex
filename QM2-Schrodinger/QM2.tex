@@ -1,0 +1,31 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{CJK}
+\begin{document}
+    \begin{CJK*}{UTF8}{kai}
+    QM2 - 将$\psi$代入 \~{F}$\psi = 0$,验证相对论能量动量关系式.
+    \end{CJK*}\\[.5cm]
+    \begin{CJK*}{UTF8}{song}
+    已知
+        $$\mbox{\~{F}} = (i\hbar \frac{\partial}{\partial t})^{2} - (-i\hbar \nabla)^{2}c^{2}-m^{2}c^{4}$$
+    将
+    $\psi = \mathrm{e}^{-i(\overrightarrow{p}\cdot\overrightarrow{x}-Et)/\hbar}$
+    代入得
+    $$\frac{\partial\psi}{\partial t} = \frac{i\cdot E}{\hbar}\psi \quad,
+    \quad \nabla\psi = -\frac{i\cdot p}{\hbar}\psi$$
+    $$\frac{\partial ^{2} \psi}{\partial t^{2}} = -\frac{E^{2}}{\hbar ^{2}}\psi \quad,
+    \quad \nabla ^{2}\psi = \frac{p^{2}}{\hbar ^{2}}\psi$$
+    故由
+        $$\mbox{\~{F}}\psi\ =\ (i\hbar)^{2}\cdot (\frac{\partial ^{2} \psi}{\partial t^{2}})
+        - (-i\hbar)^{2}\cdot (\nabla ^{2} \psi)
+        -m^{2}c^{4}\cdot \psi$$
+        $$=(E^{2}-p^{2}c^{2}-m^{2}c^{4})\psi = 0$$
+    得
+        $$E^{2}=p^{2}c^{2}+m^{2}c^{4}.$$\\
+    \begin{CJK*}{UTF8}{kai}
+        \begin{flushright}
+            \small PB12203077\quad吴奕涛\\
+            \footnotesize \today
+        \end{flushright}
+    \end{CJK*}
+    \end{CJK*}
+\end{document} 
