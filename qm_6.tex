@@ -3,7 +3,7 @@
 \usepackage{amsmath}
 \usepackage{CJK}
 \usepackage{graphicx}
-\usepackage[top=30mm,bottom=20mm,left=25mm,right=25mm]{geometry}
+\usepackage[left=25mm,right=25mm]{geometry}
 
 \begin{document}
     \begin{center}
@@ -100,15 +100,12 @@
         \quad \frac{d}{dx}H_{n}(\alpha x) = 2 n\alpha H_{n-1}(\alpha x)$$
     (a)由递推公式可得
     $$H_{n+1}(\alpha x) = 2\alpha x H_{n}(\alpha x) - 2nH_{n-1}(\alpha x)$$
-    代入需要化简的表达式可得
     \begin{eqnarray}
         \emph{Left} & = & \frac{d}{dx}\psi_{n}(x)
                         = \frac{d}{dx}[\sqrt{\frac{\alpha}{2^{n}\cdot n!\sqrt{\pi}}}
                         e^{-\alpha^{2}x^{2}/2}H_{n}(\alpha x)]\nonumber\\
                     & = &   \sqrt{\frac{\alpha}{2^{n}\cdot n!\sqrt{\pi}}}
                         e^{-\alpha^{2}x^{2}/2}[-\alpha^{2}x H_{n}(x) + 2n\alpha H_{n-1}(\alpha x)]\nonumber\\
-    \end{eqnarray}
-    \begin{eqnarray}
         \emph{Right}& = & {\alpha}[\sqrt{\frac{n}{2}}\psi_{n-1}(x)
                         - \sqrt{\frac{n + 1}{2}}\psi_{n+1}(x)]\nonumber\\
                     & = & \sqrt{\frac{\alpha}{2^{n}\cdot n!\sqrt{\pi}}}e^{-\alpha^{2}x^{2}/2}
@@ -139,19 +136,19 @@
     综上所得，原式得证。\\[12pt]
     (c)根据教材p13,力学量平均值的算符计算公式
     \begin{eqnarray}
-        \bar{p} & = & \int_{-\infty}^{\infty}
+        \bar{p} & = & \intop_{-\infty}^{\infty}
                         \psi_{n}^{*}(x)\hat{p}\,\psi_{n}(x)\mathrm{d x}\nonumber\\
-            & = & \int_{-\infty}^{\infty}\psi_{n}^{*}(x)
+            & = & \intop_{-\infty}^{\infty}\psi_{n}^{*}(x)
                         (- i\hbar\frac{\mathrm{d}\psi_{n}}{\mathrm{d} x})\mathrm{d x}\nonumber\\
-            & = & - i\hbar\int_{-\infty}^{\infty}\psi_{n}^{*}(x)
+            & = & - i\hbar\intop_{-\infty}^{\infty}\psi_{n}^{*}(x)
                         \cdot{\alpha}[\sqrt{\frac{n}{2}}\psi_{n-1}(x)
                         - \sqrt{\frac{n + 1}{2}}\psi_{n+1}(x)]\mathrm{d x}\nonumber\\
             & = & 0 \qquad,\qquad (\psi_{m},\psi_{n})=\delta_{m n}\nonumber\\
-        \bar{T}   & = & \int_{-\infty}^{\infty}
+        \bar{T}   & = & \intop_{-\infty}^{\infty}
                         \psi_{n}^{*}(x)\hat{T}\,\psi_{n}(x)\mathrm{d x}\nonumber\\
-            & = & \int_{-\infty}^{\infty}\psi_{n}^{*}(x)
+            & = & \intop_{-\infty}^{\infty}\psi_{n}^{*}(x)
                         (- \frac{\hbar^{2}}{2 m}\frac{\mathrm{d^{2}}\psi_{n}}{\mathrm{d} x^{2}})\mathrm{d x}\nonumber\\
-            & = & - \frac{\hbar^{2}}{2 m}\int_{-\infty}^{\infty}\psi_{n}^{*}(x)
+            & = & - \frac{\hbar^{2}}{2 m}\intop_{-\infty}^{\infty}\psi_{n}^{*}(x)
                 \cdot\frac{\alpha^{2}}{2}\mbox{$\left[\right.$}\sqrt{n(n-1)}\psi_{n-1} - (2n+1)\psi_{n}\nonumber\\
             &   & \rightline{\mbox{$+ \sqrt{(n+1)(n+2)}\psi_{n+2}{\left.\right]}\mathrm{d x}$}}\nonumber\\
             & = & \frac{(2 n + 1 )\hbar^{2}\alpha^{2}}{4m}
@@ -159,7 +156,7 @@
             & = & \frac{E_{n}}{2}\nonumber
     \end{eqnarray}
     }\\[20pt]
-    \noindent 2.9 \textbf{解：}\\[12pt]
+    \noindent 2.8 \textbf{解：}\\[12pt]
     {
     根据2.7(c),2.8(c)中的计算结果：\\
     $$\bar{x} = 0 \quad ,
@@ -189,54 +186,14 @@
                 \frac{\partial}{\partial x}(x^{m}\frac{\partial^{n}}{\partial x^{n}})
                 - \frac{\partial^{n+1}}{\partial x^{n+1}}]\\
             & = (-\mathrm{i}\hbar)C_{mn}\frac{\partial x^{m}}{\partial x}
-                \cdot (-\mathrm{i}\hbar)^{n}\frac{\partial^{n}}{\partial x^{n}}\\
+                \cdot (-\mathrm{i}\hbar)^{n}\frac{\partial^{n}}{\partial x^{n}\\
             & = -\mathrm{i}\hbar\frac{\partial}{\partial x}(C_{mn}x^{m}p^{n})
                 \qquad,\quad \partial p / \partial x = 0\\
             & = -\mathrm{i}\hbar\frac{\partial}{\partial x}F\\
     \end{split}
     \end{equation}
-    (b)
-    \begin{equation}
-    \begin{split}
-    [x,F]   & = x\hat{F} - \hat{F}x \\
-            & = x\cdot C_{mn}x^{m}\hat{p^{n}} - C_{mn}x^{m}\hat{p^{n}}\dot x \\
-            & = C_{mn}x^{m+1}(-\mathrm{i}\hbar)^{n}\frac{\partial^{n}}{\partial x^{n}}
-                - C_{mn}x^{m}(-\mathrm{i}\hbar)^{n}\frac{\partial^{n}}{\partial x^{n}}(x\cdot)\\
-            & = (-\mathrm{i}\hbar)^{n}C_{mn}x^{m}[x^{m}\frac{\partial^{n}}{\partial x^{n}}
-                - n\frac{\partial^{n-1}}{\partial x^{n-1}}
-                -x\frac{\partial^{n}}{\partial x^{n}}]\\
-            & = \mathrm{i}\hbar C_{mn}x^{m}\cdot n(-\mathrm{i}\hbar)^{n-1}
-                \frac{\partial^{n-1}}{\partial x^{n-1}}\\
-            & = \mathrm{i}\hbar C_{mn}x^{m}\cdot n \hat{p^{n-1}}\\
-            & = \mathrm{i}\hbar \frac{\partial}{\partial p}F.
-    \end{split}
-    \end{equation}
-    Q.E.D
-    }\\[20pt]
-    \noindent 3.7 \textbf{证明：}\\[12pt]
-    {
-    引理：
-    $$[\hat{\vec{A}}\times\hat{\vec{B}},\hat{C}] 
-        = \hat{\vec{A}}\times[\hat{\vec{B}},\hat{C}] + [\hat{\vec{A}},\hat{C}]\times\hat{\vec{B}}$$
-    利用引理及角动量算符定义$\hat{\vec{l}} = \vec{r}\times\hat{\vec{p}}$
-    \begin{equation}
-    \begin{split}
-    [\hat{\vec{l}},F]
-        & = [\vec{r}\times\hat{\vec{p}},F]\\
-        & = \vec{r}\times[\hat{\vec{p}},\hat{F}] + [\vec{r},\hat{F}]\times\hat{\vec{p}}\\
-        & = \vec{r}\times(\hat{\vec{p}}\hat{F} - \hat{F}\hat{\vec{p}})
-            +(\vec{r}\hat{F} - \hat{F}\vec{r})\times\hat{\vec{p}}\\
-        & = \vec{r}\times[-\mathrm{i}\hbar\frac{\partial F}{\partial \vec{r}}
-            -F\cdot(-\mathrm{i}\hbar\frac{\partial}{\partial \vec{r}})]
-            +[\mathrm{i}\hbar\frac{\partial F}{\partial \vec{p}}
-            -F\cdot\mathrm{i}\hbar\frac{\partial}{\partial \vec{p}}]\times\hat{\vec{p}}\\
-                        % \mbox{-应用3.3(b)}
-        & = -\mathrm{i}\hbar(\vec{r}\times\frac{\partial F}{\partial \vec{r}} 
-            - \frac{\partial F}{\partial \vec{p}}\times\vec{p})
-    \end{split}
-    \end{equation}
-    Q.E.D
-    }\\[20pt]
+    }
+
     \end{CJK*}
 
 

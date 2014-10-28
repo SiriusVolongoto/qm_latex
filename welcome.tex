@@ -1,0 +1,23 @@
+%FOR PRACTICE
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{CJK}
+\usepackage{amsmath}
+\usepackage{ctex}
+
+\newcommand{\qed}{
+    \rightline{Q.E.D.}
+}
+
+\begin{document}
+    \begin{eqnarray}
+    Right   & = & \frac{1}{2\alpha^{2}}\sqrt{\frac{\alpha}{2^{n}\cdot n!}} \mbox{$\left[\right.$}
+                \alpha x (2 n H_{n-1}(\alpha x) + H_{n+1}(\alpha x))\mbox{$+(2n+1-n-(n+1))H_{n}(\alpha x)\left.\right]$}\nonumber\\
+            & = & \frac{1}{2\alpha^{2}}\sqrt{\frac{\alpha}{2^{n}\cdot n!}}\cdot\alpha x\cdot \alpha x H_{n}(\alpha x)\nonumber\\
+            & = & \sqrt{\frac{\alpha}{2^{n}\cdot n!}}x^{2} H_{n}(\alpha x)\nonumber
+    \end{eqnarray}
+    \begin{equation}
+    \qed
+    \end{equation}
+\end{document}
