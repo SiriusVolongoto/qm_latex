@@ -1,0 +1,123 @@
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{CJK}
+\usepackage{graphicx}
+\usepackage[top=30mm,bottom=22mm,left=25mm,right=25mm]{geometry}
+
+\newcommand{\qed}{
+    \rightline{Q.E.D.}\\
+    }
+\linespread{1.25}
+\newcommand{\ft}{\footnotesize}
+\newcommand{\dis}{\displaystyle}
+\newcommand{\VEC}[1]{\overrightarrow{#1}}
+
+\begin{document}
+    %大标题
+    \begin{center}
+        \textsf{\LARGE{Quantum Mechanics (A) - Assignment 8}}\\[20pt]
+    \end{center}
+    % 签名 最后修改日期
+    \begin{CJK*}{UTF8}{kai}
+        \begin{flushright}
+            \small PB12203077\quad吴奕涛\\
+            \small Last Modified : \today\\[30pt]
+        \end{flushright}
+    \end{CJK*}
+    % 正文
+    % 作业布置日期
+    \noindent\Large{\emph{October 30 , 2014}}\\[15pt]
+    \begin{CJK*}{UTF8}{song}
+    % 作业题 1
+    \noindent 5.5 计算氢原子基态时，
+        电子处于经典禁区$(r>2a)$(即$E-V<0$区域)的概率。\\[8pt]
+    \textbf{解：}\\[5pt]
+    {
+    氢原子基态
+    $$\psi=\psi_{100}(r,\theta,\varphi)=R_{10}Y_{00}
+        =\frac{2}{a^{3/2}}e^{-r/a}\cdot\frac{1}{\sqrt{4\pi}}
+        =\frac{1}{\sqrt{\pi}a^{3/2}}e^{-r/a}$$
+    计算经典禁区内的概率
+    $$P(r>2a)=\int_{0}^{2\pi}\mathrm{d\varphi}
+        \int_{0}^{\pi}sin(\theta)\mathrm{d\theta}
+        \int_{2a}^{\infty}r^{2}|\psi|^{2}\mathrm{dr}
+        =\frac{13}{e^{4}}=0.23810$$
+    }\\[20pt]
+    \noindent 5.6 对于类氢原子(核电荷Ze)的“圆轨道”$(n_{r}=0)$，计算\\[8pt]
+    \textbf{解：}\\[5pt]
+    {
+    (a)最概然半径。
+    由波函数球对称性可知，在$(r,r+\mathrm{d}r)$球壳内找到电子的概率为
+    $$P(r)\mathrm{d}r=r^{2}\mathrm{d}r\int\mathrm{d}\Omega|\psi|^{2}
+        =|R_{nl}|^{2}r^{2}\mathrm{d}r$$
+    故最概然半径$r_{m}$处有$\dis\frac{\mathrm{d}P(r)}{\mathrm{d}r}=0$,
+        亦即$\dis\frac{\mathrm{d}(r R_{nl})}{\mathrm{d}r}=0$。\\
+    对于类氢原子圆轨道基态
+    $$r R_{nl}(r)=r R_{n,n-1}(r)=C r^{n}e^{-\frac{Z r}{n a}},\mbox{则}r_{m}=n^{2}a/Z$$
+    (b)计算$\bar{r}$。\\
+    令$\chi_{nl}=r R_{nl}$，则
+    $$\bar{r}=\int_{V}r|\psi_{nlm}|^{2}\mathrm{d}^{3}r
+        =\int_{0}^{\infty}r|\chi_{nl}|^{2}\mathrm{d}r$$
+    已知$\chi_{nl}$满足微分方程
+    $$\chi_{nl}^{''}+[\frac{2\mu}{\hbar^{2}}(E+\frac{Z e^{2}}{r})
+        -\frac{l(l+1)}{r^{2}}]\chi_{nl} = 0$$
+    将$r^{\lambda}\chi_{nl}$和$2r^{\lambda+1}\chi_{nl}$分别乘入上式并积分整理得
+    $$\frac{\lambda +1}{\hbar^{2}}\overline{r^{\lambda}}
+        -(2\lambda +1)\frac{a}{Z}\overline{r^{\lambda-1}}
+        +\frac{\lambda}{4}[(2l+1)^{2}-\lambda^{2}](\frac{a}{Z})^{2}
+        \overline{r^{\lambda-2}}=0$$
+    上式即为Kramers定理。\\
+    令$\lambda=0$得$\overline{r^{-1}}=\frac{Z}{n^{2}a}$,再令$\lambda=1$,即可得
+    $$\bar{r}=n(n+\frac{1}{2})\frac{a}{Z}\quad,\quad l=n-1$$
+    (c)计算$\Delta r$。\\
+    利用(b)中结果，令$\lambda =2$可得
+    $$\overline{r^{2}}=\frac{n^{2}}{2}(2 n+1)(n+1)(\frac{a}{Z})^{2}
+        \quad,\quad l=n-1$$
+    根据标准差计算公式
+    $$\Delta r = \sqrt{\overline{r^{2}} - (\bar{r})^{2}}
+        =\sqrt{\frac{n^{2}}{2}(2 n+1)(n+1)(\frac{a}{Z})^{2}}
+        =\frac{n}{2}\sqrt{2 n+1}\frac{a}{Z}.$$
+    }\\[20pt]
+    \noindent 5.11 二维谐振子势$\dis V(x,y)=\frac{1}{2}m\omega_{x}^{2}x^{2}
+        +\frac{1}{2}m\omega_{x}^{2}x^{2}$，设$\omega_{x}/\omega_{y}=1/2$，
+        求能级的分布和简并度\\[8pt]
+    \textbf{解：}\\[5pt]
+    {
+    给定的$V(x,y)$代入Hamilton量表达式中有
+    $$\hat{H}=\frac{\hat{p^{2}}}{2m}+V(x,y)
+        =-\frac{\hbar^{2}}{2 m}\frac{\partial^{2}}{\partial x^{2}}
+        -\frac{\hbar^{2}}{2 m}\frac{\partial^{2}}{\partial x^{2}}
+        +\frac{1}{2}m\omega_{x}^{2}x^{2}+\frac{1}{2}m\omega_{x}^{2}x^{2}$$
+    设$\hat{H}=\hat{H_{x}}+\hat{H_{y}}$，其中：
+    \begin{equation*}\begin{split}
+    \hat{H_{x}} & =  -\frac{\hbar^{2}}{2 m}\frac{\partial^{2}}{\partial x^{2}}
+        + \frac{1}{2}m\omega_{x}^{2}x^{2}\\
+    \hat{H_{y}} & =  -\frac{\hbar^{2}}{2 m}\frac{\partial^{2}}{\partial y^{2}}
+        + \frac{1}{2}m\omega_{y}^{2}y^{2}\\        
+    \end{split}\end{equation*}
+    显然有$\hat{H},\hat{H_{x}},\hat{H_{y}}$两两对易。\\
+    利用一维谐振子结果可得$\hat{H_{x}},\hat{H_{y}}$本征值
+    $$E_{n x}=(n_{x}+\frac{1}{2})\hbar\omega_{x}
+        \quad,\quad E_{n y}=(n_{y}+\frac{1}{2})\hbar\omega_{y}$$
+    设$\omega_{x}=\omega,\omega_{y}=2\omega$，则$\hat{H}$的能级分布为
+    $$E_{n}=E_{n x}+E_{n y}=(n_{x}+2 n_{y} + \frac{3}{2})\hbar\omega
+        \quad,\quad n = n_{x}+2 n_{y}$$
+    分析能级简并度。\\
+    当$n=2m+1$时，$(n_{x},n_{y})=(1,m),(3,m-1)...(2 m+1,0)$,
+        简并度为m+1，即(n+1)/2。\\
+    当$n=2m$时，$(n_{x},n_{y})=(0,m),(2,m-1)...(2 m,0)$,
+        简并度为m+1，即n/2+1。\\
+    }\\[20pt]
+    \noindent\Large{\emph{November 3 , 2014}}\\[15pt]
+    \noindent 随堂作业 - 证明：$\bar{A}=\langle\psi|A|\psi\rangle$\\[8pt]
+    \textbf{解：}\\[5pt]
+    {
+    设A的本征态空间为$|a\rangle$，由此展开$|\psi\rangle = C_{a}|a\rangle$\\
+    $$\langle\psi|A|\psi\rangle = \langle a|Ca\cdot A\cdot C_{a}|a\rangle
+        = C_{a}^{2}\langle a|a|a\rangle = C_{a}^{2}a = \bar{A}$$
+    \qed
+    }\\[20pt]
+    \end{CJK*}
+
+\end{document} 
