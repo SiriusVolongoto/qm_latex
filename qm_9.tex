@@ -1,0 +1,197 @@
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{CJK}
+\usepackage{graphicx}
+\usepackage[top=30mm,bottom=22mm,left=25mm,right=25mm]{geometry}
+
+\newcommand{\qed}{
+    \rightline{Q.E.D.}\\
+    }
+\linespread{1.25}
+\newcommand{\ft}{\footnotesize}
+\newcommand{\dis}{\displaystyle}
+\newcommand{\VEC}[1]{\overrightarrow{#1}}
+
+\begin{document}
+    %大标题
+    \begin{center}
+        \textsf{\LARGE{Quantum Mechanics (A) - Assignment 9}}\\[20pt]
+    \end{center}
+    % 签名 最后修改日期
+    \begin{CJK*}{UTF8}{kai}
+        \begin{flushright}
+            \small PB12203077\quad吴奕涛\\
+            \small Last Modified : \today\\[30pt]
+        \end{flushright}
+    \end{CJK*}
+    % 正文
+    % 作业布置日期
+    \noindent\Large{\emph{November 10 , 2014}}\\[15pt]
+    \begin{CJK*}{UTF8}{song}
+    % 作业题 例1
+    % 标题-黑体
+    \begin{CJK*}{UTF8}{hei}
+    \noindent 作业一、利用球极坐标下定态薛定谔方程验证单一能量的自由粒子的概率幅度正比于
+    $\dis\frac{1}{r_{12}}e^{\mathrm{i}k r_{12}}$
+    \end{CJK*}
+    \\[12pt]
+    {
+    \noindent 证明:
+    由题意可得$\dis\langle r_{2}|r_{1}\rangle = A e^{\mathrm{i} k r}$。\\
+    自由粒子定态薛定谔方程的球坐标形式为
+    $$-\frac{\hbar^{2}}{2 m}\nabla^{2}\psi
+    = -\frac{\hbar^{2}}{2 m}[\frac{1}{r^{2}}\frac{\partial}{\partial r}(r^{2}\frac{\partial\psi}{\partial r})]=E\psi$$
+    代入表达式可得
+    \begin{equation*}\begin{split}
+    \indent\emph{Left}
+        & = -\frac{\hbar^{2}}{2 m}\frac{1}{r^{2}}\frac{\partial}{\partial r}(r^{2}\frac{\partial(A e^{\mathrm{i}k r}/r)}{\partial r})
+         = -\frac{\hbar^{2}}{2 m}\frac{1}{r^{2}}\frac{\partial}{\partial r}(r^{2}
+        \cdot A e^{\mathrm{i}k r}(\frac{\mathrm{i}k }{r}-\frac{1}{r^{2}}))\\
+        & = -\frac{\hbar^{2}}{2 m}\frac{1}{r^{2}}\frac{\partial}{\partial r}
+        (A e^{\mathrm{i}k r}(\mathrm{i}k r-1))
+        = -\frac{\hbar^{2}}{2 m}\frac{1}{r^{2}}
+        [\mathrm{i}k A e^{\mathrm{i}k r}(\mathrm{i}k r-1)+\mathrm{i}k A e^{\mathrm{i}k r}]\\
+        & = \frac{\hbar^{2}k^{2}}{2 m}\frac{A e^{\mathrm{i}k r}}{r}\\
+    \indent\emph{Right}
+        & = E_{1}\psi = \frac{\hbar^{2}k^{2}}{2 m}\frac{A e^{\mathrm{i}k r}}{r}
+    \end{split}\end{equation*}
+    由此可得，Left=Right，原式成立。\\[8pt]
+    \qed
+    }\\[20pt]
+    \begin{CJK*}{UTF8}{hei}
+    \noindent作业二、假设光子线偏振态矢量分量$(\cos{\theta},\sin{\theta})^{T},\theta$为
+    起偏器的角度、符号T表示转置，而对偶左矢量为右矢量的转置共轭，请验证实验结果出射强度
+    $I=$入射强度$I_{0}\cos^{2}(\theta-\phi)$,其中$\phi$为检偏器的角度。
+    \end{CJK*}
+    \\[12pt]
+    {
+    \noindent 证明:\\
+    根据光子线偏振态矢量分量定义，假设出射偏转角度为$\phi$,则出射振幅态
+    $$\langle\phi |\theta\rangle
+        =(\cos\phi \sin\phi)\binom{\cos\theta}{\sin\theta}
+        =\cos\phi\cos\theta-\sin\phi-\sin\theta
+        =\cos(\theta-\phi)
+        $$
+    由光强等于振幅的平方可得，$I=I_{0}\cos^{2}(\theta-\phi)$。\\[8pt]
+    \qed
+    }\\[20pt]
+    \begin{CJK*}{UTF8}{hei}
+    \noindent作业三、利用狄拉克符号的惠更斯原理对比傅立叶逆变换，推导
+    $$\dis\langle k|x\rangle=\frac{1}{2\pi}e^{-\mathrm{i}k x}$$
+    \end{CJK*}
+    \noindent 证明:\\
+    {
+    已知$\dis\langle x|p\rangle=e^{\mathrm{i}p x/\hbar}$，
+    即$\dis\langle x|k\rangle=e^{\mathrm{i}k x}$
+    由惠更斯原理$\langle k | x \rangle = \langle x|k\rangle^{*}$\\
+    对比Fourier逆变换
+    $$\phi(k)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\psi(x)e^{-\mathrm{i}k x}\mathrm{d}x$$
+    即可得
+    $$\dis\langle k|x\rangle=\frac{1}{2\pi}e^{-\mathrm{i}k x}$$
+    \qed
+    }\\[40pt]
+    % 作业布置日期
+    \noindent\Large{\emph{November 13 , 2014}}\\[15pt]
+    % 标题-黑体
+    \begin{CJK*}{UTF8}{hei}
+    \noindent 作业一、在宽为L的无限深势阱中，质量m的粒子处于束缚态，试解决以下问题
+    \end{CJK*}
+    \noindent \emph{解:}\\
+    {
+    \begin{CJK*}{UTF8}{kai}
+    (1)请给出能量本征态的x表示，即在x表象下的能量本征波函数$\langle x|E_{n} \rangle$。
+    以及能量表象与坐标表象之间的变换式：\\
+    \end{CJK*}
+    根据波动方程形式的定态薛定谔方程无限深方势阱能量本征解可知
+    $$\langle x|E_{n}\rangle = \psi_{n}(x)=\sqrt{\frac{2}{L}}\sin{\frac{n\pi x}{L}}$$
+    已知$x$表象下,坐标本征态$\langle x|x^{'}\rangle =\delta(x-x')$，
+    动量本征态$\langle x|p'\rangle = \frac{1}{\sqrt{2\pi\hbar}}e^{\mathrm{i}p'x/\hbar}$\\
+    由$\hat{E}=\frac{\hat{p^{2}}}{2 m}+V(x)$可得，表象变换公式
+    $$\langle E|\psi\rangle=\int\mathrm{d}x'\langle E|x'\rangle\langle x'|\psi\rangle
+        =\int\mathrm{d}x'\langle x'|E\rangle^{*}\langle x'|\psi\rangle$$
+    \begin{CJK*}{UTF8}{kai}
+    \noindent(2)通解$|\psi\rangle=\sum_{n}|E_{n}\rangle C_{n}$中的在能量本征态下的展开系数的表达式
+        $C_{n}=?\psi(x)$——用波函数$\psi(x)$构造。\\
+    \end{CJK*}
+    根据投影算符归一化定义$|\psi\rangle=\sum|E_{n}\rangle\langle E_{n}|\psi\rangle$，
+    故由此可得$C_{n}=\langle E_{n}|\psi\rangle$\\
+    \begin{CJK*}{UTF8}{kai}
+    (3)逆表象变换表达式：波函数用展开系数的表达式$\psi(x)=?  C_{n}$。
+    \end{CJK*}
+    同(1)中变换方式可得
+    $$\langle x|\psi\rangle = \sum\langle x|E_{n}\rangle\langle E_{n}|\psi\rangle 
+        = \sum\langle x|E_{n}\rangle C_{n}$$
+    \qed
+    }\\[20pt]
+    % 标题-黑体
+    \begin{CJK*}{UTF8}{hei}
+    \noindent 作业二、\emph{[曾谨言，教材习题7.5]}\\
+    利用$x$表象和$p$表象之间的“幺正变换”，从7.3题推出7.4题中的结果
+    \end{CJK*}
+    \\[12pt]
+    {
+    \noindent \emph{解}:\\
+    7.3题中的结果:$x$表象中$x,p,H$的"矩阵元"
+    \begin{equation*}\begin{split}
+    (x)_{x'x''} & = \langle x'|x|x''\rangle = x'\delta(x'-x'')\\
+    (p)_{x'x''} & = \langle x'|\hat{p}|x''\rangle 
+        = -\mathrm{i}\hbar\frac{\partial}{\partial x'}\delta(x'-x'')\\
+    (H)_{x'x''} & = \langle x'|\hat{H}|x''\rangle
+        =-\frac{{\hbar}^{2}}{2 m}\frac{\partial^{2}}{\partial {x'}^{2}}\delta(x'-x'')
+        +V(x')\delta(x'-x'')\\
+    \end{split}\end{equation*}
+    $x$表象和$p$表象之间的“幺正变换”
+    $$\langle x|x'\rangle =\delta(x-x')\quad,\quad
+        \langle x|p'\rangle = \frac{1}{\sqrt{2\pi\hbar}}e^{\mathrm{i}p'x/\hbar}$$
+    $$\langle p|p'\rangle =\delta(p-p')\quad,\quad
+        \langle p|x'\rangle = \frac{1}{\sqrt{2\pi\hbar}}e^{-\mathrm{i}p x'/\hbar}$$        
+    则由以上可得7.4中结果：$p$表象下$x,p,H$的“矩阵元”
+    \begin{equation*}\begin{split}
+    (x)_{p'p''} 
+        & = \langle p'|x|p''\rangle
+            = \iint\mathrm{d}x'\mathrm{d}x''\langle p'|x'\rangle\langle x'|x|x''\rangle
+            \langle x''|p''\rangle\\
+        & = \iint\mathrm{d}x'\mathrm{d}x''
+            \frac{e^{-\mathrm{i}p'x'/\hbar}}{\sqrt{2\pi\hbar}}
+            \cdot x'\delta(x'-x'')\cdot
+            \frac{e^{\mathrm{i}p''x''/\hbar}}{\sqrt{2\pi\hbar}}\\
+        & = \frac{1}{2\pi\hbar}\int\mathrm{d}x'\cdot x' e^{-\mathrm{i}(p'-p'')x'/\hbar}\\
+        & = \frac{1}{2\pi\hbar}\cdot\mathrm{i}\hbar\frac{\partial}{\partial p'}
+            \int\mathrm{d}x'\cdot e^{-\mathrm{i}(p'-p'')x'/\hbar}\\
+        & = \mathrm{i}\hbar\frac{\partial}{\partial p'}\delta(p'-p'')\\
+    (p)_{p'p''}
+        & = \langle p'|p|p''\rangle
+            = \iint\mathrm{d}x'\mathrm{d}x''\langle p'|x'\rangle\langle x'|p|x''\rangle
+            \langle x''|p''\rangle\\
+        & = \iint\mathrm{d}x'\mathrm{d}x''
+            \frac{e^{-\mathrm{i}p'x'/\hbar}}{\sqrt{2\pi\hbar}}
+            \cdot(-\mathrm{i}\hbar\frac{\partial}{\partial x'})\delta(x'-x'')\cdot
+            \frac{e^{\mathrm{i}p''x''/\hbar}}{\sqrt{2\pi\hbar}}\\
+        & = \frac{1}{2\pi\hbar}\int\mathrm{d}x'
+            \cdot e^{-\mathrm{i}p'x'/\hbar}
+            (-\mathrm{i}\hbar\frac{\partial}{\partial x'})
+            e^{-\mathrm{i}p''x'/\hbar}\\
+        & = \frac{1}{2\pi\hbar}\cdot p''
+            \int\mathrm{d}x'\cdot e^{-\mathrm{i}(p'-p'')x'/\hbar}\\
+        & = p'\delta(p'-p'')\\
+    (H)_{p'p''}
+        & = \langle p'|H|p''\rangle
+            = \iint\mathrm{d}x'\mathrm{d}x''\langle p'|x'\rangle\langle x'|H|x''\rangle
+            \langle x''|p''\rangle\\
+        & = \iint\mathrm{d}x'\mathrm{d}x''
+            \frac{e^{-\mathrm{i}p'x'/\hbar}}{\sqrt{2\pi\hbar}}
+            \cdot [-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial {x'}^{2}}
+            \delta(x'-x'')+V(x')\delta(x'-x'')]\cdot
+            \frac{e^{\mathrm{i}p''x''/\hbar}}{\sqrt{2\pi\hbar}}\\
+        & = \frac{1}{2\pi\hbar}\int\mathrm{d}x'
+            \cdot e^{-\mathrm{i}p'x'/\hbar}
+            [-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial {x'}^{2}}+V(x')]
+            e^{\mathrm{i}p''x'/\hbar}\\
+        & = \frac{1}{2\pi\hbar}\int\mathrm{d}x'\cdot
+            [\frac{{p''}^{2}}{2m}+V(x')]e^{-\mathrm{i}(p'-p'')x'/\hbar}\\
+        & = \frac{{p'}^{2}}{2m}\delta(p'-p'')+V(\mathrm{i}\hbar\frac{\partial}{\partial p'})\delta(p'-p'')
+    \end{split}\end{equation*}
+    }\\[20pt]
+    \end{CJK*}
+\end{document} 
