@@ -193,5 +193,70 @@
         & = \frac{{p'}^{2}}{2m}\delta(p'-p'')+V(\mathrm{i}\hbar\frac{\partial}{\partial p'})\delta(p'-p'')
     \end{split}\end{equation*}
     }\\[20pt]
+	% 作业布置日期
+    \noindent\Large{\emph{November 17 , 2014}}\\[15pt]
+    % 作业题 例1
+    \begin{CJK*}{UTF8}{hei}
+    \noindent 作业一、 证明:$\psi_{\alpha} = S_{\alpha i}\phi_{i}$\\[12pt]
+    \end{CJK*}
+    {
+    \indent 已知$|\psi\rangle=\psi_{i}|i\rangle=\psi_{\alpha}|\alpha\rangle$,
+        故若取$|\beta\rangle\in{|\alpha\rangle}$，则容易得到
+    $$\langle\beta|\psi\rangle = \langle\beta|\psi_{i}|i\rangle=\psi_{i}\langle\beta|i\rangle$$
+    $$\langle\beta|\psi\rangle = \langle\beta|\psi_{\alpha}|\alpha\rangle=\psi_{\beta}$$
+    即$\psi_{\beta} = \langle\beta|i\rangle \psi_{i}= S_{\beta i}\psi_{i}$\\
+    \qed
+    }\\[20pt]
+    \begin{CJK*}{UTF8}{hei}
+    \noindent 作业二、 证明:$C|\psi\rangle\leftrightarrow\langle\psi|C^{*}$\\[12pt]
+    \end{CJK*}
+    {
+    \indent 已知$\langle\varphi|\psi\rangle^{*}=\langle\psi|\varphi\rangle$，
+        则$(\langle\varphi|C|\psi\rangle)^{*}=\langle\psi|C^{*}|\varphi\rangle$\\
+    \indent 由$\rangle\varphi|\leftrightarrow|\varphi\rangle$可得
+    $$C|\psi\rangle\leftrightarrow\langle\psi|C^{*}$$
+    \qed
+    }\\[20pt]
+    \begin{CJK*}{UTF8}{hei}
+    \noindent 作业三、 证明:$\widetilde{A}_{ij}=A_{ji}$\\[12pt]
+    \end{CJK*}
+    {
+    \indent 根据转置算符的定义式
+    $\langle\psi|\widetilde{A}|\varphi\rangle=\langle\varphi|A|\psi\rangle$，
+    插入恒等算符可得
+    $$\langle\psi|\widetilde{A}|\varphi\rangle 
+        = \langle\psi|i\rangle\langle i|\widetilde{A}|j\rangle\langle j|\varphi\rangle
+        =\psi_{i}\varphi_{j}\widetilde{A}_{ij}$$
+    $$\langle\varphi|A|\psi\rangle
+        = \langle\varphi|j\rangle\langle j|A|i\rangle\langle i|\varphi\rangle
+        =\psi_{i}\varphi_{j}A_{ji}$$
+    \indent 由以上二式可得
+    $$\widetilde{A}_{ij}=A_{ji}$$ 
+    }\\[20pt]
+    \begin{CJK*}{UTF8}{hei}
+    \noindent 作业四、 讨论$U,U',U^{+}$关系\\[12pt]
+    \end{CJK*}
+    {
+    \indent 定义$U=S_{i\alpha}|i\rangle\langle\alpha|$，同作业三运算可得\\
+    \begin{equation*}\begin{split}
+    \langle\psi|U|\varphi\rangle
+        & =\langle i|\alpha\rangle\langle\psi|i\rangle\langle\alpha|\varphi\rangle
+            =\psi_{i}\varphi_{\alpha}\langle i|\alpha\rangle\\ 
+    \langle\varphi|\widetilde{U}|\psi\rangle
+        & = \langle\varphi|\alpha\rangle\langle\alpha|
+            \widetilde{U}|i\rangle\langle i|\psi\rangle
+            =\psi_{i}\varphi_{\alpha}\langle\alpha|\widetilde{U}|i\rangle\\
+    \end{split}\end{equation*}
+    $$\widetilde{U}
+        = |\alpha\rangle\langle i|\alpha\rangle\langle i|
+        = \langle\alpha|i\rangle|\alpha\rangle\langle i|
+        =S_{\alpha i}|\alpha\rangle\langle i|$$
+    \indent 相应地，由厄米转置定义
+        $\langle\psi|A^{+}|\varphi\rangle=\langle A\psi|\varphi\rangle$可得
+    $$\langle\psi|U^{+}|\varphi\rangle = (\langle\varphi|U|\psi\rangle)^{*}
+        =\langle\psi|\widetilde{U}^{*}|\varphi\rangle$$
+    \indent 即直接写出$U^{+}$表达式
+    $$U^{+}=\widetilde{U}^{*}=S_{i\alpha}|\alpha\rangle\langle i|$$
+    }\\[20pt]
     \end{CJK*}
 \end{document} 
