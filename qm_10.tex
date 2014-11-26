@@ -1,0 +1,101 @@
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{CJK}
+\usepackage{graphicx}
+\usepackage[top=30mm,bottom=22mm,left=25mm,right=25mm]{geometry}
+
+\newcommand{\qed}{
+    \rightline{Q.E.D.}\\
+    }
+\linespread{1.25}
+\newcommand{\ft}{\footnotesize}
+\newcommand{\dis}{\displaystyle}
+\newcommand{\VEC}[1]{\overrightarrow{#1}}
+
+\begin{document}
+    %大标题
+    \begin{center}
+        \textsf{\LARGE{Quantum Mechanics (A) - Assignment 10}}\\[20pt]
+    \end{center}
+    % 签名 最后修改日期
+    \begin{CJK*}{UTF8}{kai}
+        \begin{flushright}
+            \small PB12203077\quad吴奕涛\\
+            \small Last Modified : \today\\[30pt]
+        \end{flushright}
+    \end{CJK*}
+    % 正文
+    % 作业布置日期
+    \noindent\Large{\emph{November 20 , 2014}}\\[15pt]
+    \begin{CJK*}{UTF8}{song}
+    % Problem 1
+    \begin{CJK*}{UTF8}{hei}
+    \noindent 整理知识框架 - From Hilbert to Dirac $\langle ket|bra\rangle$\\[12pt]
+    \end{CJK*}
+    {
+    (a)$\psi\rightarrow|\psi\rangle$\\
+    \indent 考虑波函数在$Shr\ddot{o}dinger$绘景下若表示为$\psi(x)$,
+    则数学上$\psi$可以理解为将坐标x对应到振幅域的一个变换/映射。\\
+    \indent Dirac符号中的右矢$|\psi\rangle$是直接代表量子态的表述，类似变换/映射但不局限于具体的表象。\\
+    (b)引入$\langle\psi|$\\
+    \indent 左矢与右矢一一对应，各自形成的线性空间互为共轭对偶空间，该对应具有如下线性性质
+    \begin{equation*}\begin{split}
+	\langle A| & \leftrightarrow|A\rangle\\
+	\langle A|+\langle B| & \leftrightarrow|A\rangle+|B\rangle\\
+	\langle A|C^{*} & \leftrightarrow C|A\rangle
+     \end{split} \end{equation*}
+	考虑左矢的物理意义，同样也是量子态(态矢量)，与对应右矢在物理上一致。\\
+	(c)$(\varphi,\psi) \Leftrightarrow\langle\varphi | \psi\rangle$\\
+	\indent Hilbert空间中内积定义
+	\begin{displaymath}
+		(\varphi,\psi)  = \int_{-\infty}^{\infty}\mathrm{d}a\cdot\varphi^{*}\psi
+	\end{displaymath}
+	\indent Dirac符号规则下定义\textbf{复数}$\langle\varphi | \psi\rangle$，
+	同时满足共轭对偶空间的共轭性质：对$|A\rangle$线性，对$|B\rangle$反线性。\\
+	\indent 根据统计诠释，其物理内涵应为在态矢$|\psi\rangle$上测得$|q\rangle$的概率幅度\\
+	(d)$\langle A|A\rangle$态矢和自己的内积\\
+	\indent 数学上，矢量与自己内积的平方根为矢量的长度(模)。\\
+	\indent 根据态矢的模定义及Dirac符号规则小的内积定义，任意态矢与自身的内积均可归一化为1，满足统计诠释的概率幅度性质。
+    }\\[20pt]
+    % Problem 2
+    \begin{CJK*}{UTF8}{hei}
+    	\noindent Problem 2 - 
+    	利用$\phi_{p}(x)$以及$\delta(x - x')$的波函数解释$\phi_{x}(p)$\\[12pt]
+    \end{CJK*}
+    {
+	\indent 已知$\langle x' | x\rangle = \delta(x-x')$，
+	$\dis\phi_{p}(x)=\langle x|p\rangle = 
+		\frac{1}{\sqrt{2\pi\hbar}}e^{-\mathrm{i}px/\hbar}
+		$\\
+	\indent 故利用单位算符
+	$\dis\int_{-\infty}^{\infty}\mathrm{d}x'\cdot |x'\rangle\langle x'| = 1$\\
+	\begin{equation*}\begin{split}
+	\phi_{x}(p)
+		&=\langle p|x\rangle
+		 =\int_{-\infty}^{\infty}\mathrm{d}x'\cdot\langle x |x'\rangle\langle x'|p\rangle\\
+		&=  \frac{1}{\sqrt{2\pi\hbar}}e^{\mathrm{i}px/\hbar}
+	\end{split}\end{equation*}
+    }\\[40pt]
+    % 作业布置日期
+    \noindent\Large{\emph{November 24 , 2014}}\\[15pt]    
+    % Problem 3
+    \begin{CJK*}{UTF8}{hei}
+    	\noindent Problem 3 - 
+    	利用Dirac符号证明：$[\hat{x},\hat{p}]=\mathrm{i}\hbar$\\[12pt]
+    \end{CJK*}
+    {
+	\noindent 证明：\\[5pt]
+	\indent 欲证$[\hat{x},\hat{p}]=\mathrm{i}\hbar$，
+		即证$\langle x'|[\hat{x},\hat{p}]|x\rangle=\mathrm{i}\hbar\delta(x-x')$.
+	\begin{equation*}\begin{split}
+		\emph{Left}
+			& = \langle x'|[\hat{x},\hat{p}]|x\rangle\\
+			& =  \langle x'|(\hat{x}\hat{p} - \hat{p}\hat{x})|x\rangle\\
+			& = (x'\delta(x'-x)-x)\langle x'|\hat{p}|x\rangle\\
+			& =  (x'\delta(x'-x)-x)\cdot(-\mathrm{i}\hbar\frac{\partial}{\partial(x'-x)}\delta(x'-x))\\
+			& =\mathrm{i}\hbar\delta(x-x') = \emph{Right}
+	\end{split}\end{equation*}
+    }\\[40pt]
+    \end{CJK*}
+\end{document} 
